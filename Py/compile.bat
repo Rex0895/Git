@@ -1,0 +1,1 @@
+C:\Python35\Scripts\pyuic5 D:\Programs\Py\ui\ui.ui -o D:\Programs\Py\ui\ui.py
