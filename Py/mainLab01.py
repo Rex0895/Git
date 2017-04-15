@@ -15,51 +15,93 @@ class mainLab01(QDialog, Ui_Dialog):
     def __init__(self):
         super(mainLab01, self).__init__()
         self.setupUi(self)
-        self.Open.clicked.connect(self.OpenClick)#вызов обработчика кнопки
-        self.Close.clicked.connect(self.CloseClick)  # вызов обработчика кнопки
-        self.On.clicked.connect(self.OnClick)  # вызов обработчика кнопки
-        self.Off.clicked.connect(self.OffClick)  # вызов обработчика кнопки
+       # self.Open.clicked.connect(self.OpenClick)#вызов обработчика кнопки
+        #self.Close.clicked.connect(self.CloseClick)  # вызов обработчика кнопки
+       # self.On.clicked.connect(self.OnClick)  # вызов обработчика кнопки
+       # self.Off.clicked.connect(self.OffClick)  # вызов обработчика кнопки
         data = b""
+    '''
+        #Обработчик кнопки Open
+        def OpenClick(self):
+            print("aaaaaaaaaaa")
+            try:
+                self.mainCode()
+            except EnvironmentError:
+                print("Error")
 
-    #Обработчик кнопки Open
-    def OpenClick(self):
-        print("aaaaaaaaaaa")
-        try:
-            self.mainCode()
-        except EnvironmentError:
-            print("Error")
+        # Обработчик кнопки Close
+        def CloseClick(self):
+            print("bbbbbbbbbbb")
+            try:
+                self.mainCode()
+            except EnvironmentError:
+                print("Error")
 
-    # Обработчик кнопки Close
-    def CloseClick(self):
-        print("bbbbbbbbbbb")
-        try:
-            self.mainCode()
-        except EnvironmentError:
-            print("Error")
+        # Обработчик кнопки On
+        def OnClick(self):
+            print("ccccccccccc")
+            try:
+                self.mainCode()
+            except EnvironmentError:
+                print("Error")
 
-    # Обработчик кнопки On
-    def OnClick(self):
-        print("ccccccccccc")
-        try:
-            self.mainCode()
-        except EnvironmentError:
-            print("Error")
+        # Обработчик кнопки Off
+        def OffClick(self):
+            print("ddddddddddd")
+            try:
+                self.mainCode()
+            except EnvironmentError:
+                print("Error")
+    '''
+    class datainfo: #Хранит данные ответа
+        analoutpar1=0
+        analoutpar2 = 0
+        analoutpar3 = 0
+        analoutpar4 = 0
 
-    # Обработчик кнопки Off
-    def OffClick(self):
-        print("ddddddddddd")
-        try:
-            self.mainCode()
-        except EnvironmentError:
-            print("Error")
+        discoutpar1 = 0
+        discoutpar2 = 0
+        discoutpar3 = 0
+        discoutpar4 = 0
+        discoutpar5 = 0
+        discoutpar6 = 0
 
-    class datainfo: #Хранит данные ответа для одного устройства
-        #если другое устройство, то новый класс и функция
-        waterT=0
-        waterP=0
-        def __init__(self,wT,wP):
-            self.waterT = wT
-            self.waterP = wP
+        analinputpar1=0
+        analinputpar2 = 0
+        analinputpar3 = 0
+        analinputpar4 = 0
+        analinputpar5 = 0
+
+        discinputpar1=0
+        discinputpar2 = 0
+        discinputpar3 = 0
+        discinputpar4 = 0
+        discinputpar5 = 0
+
+        def __init__(self,aop1,aop2,aop3,aop4,dop1,dop2,dop3,dop4,dop5,dop6,aip1,aip2,aip3,aip4,aip5,dip1,dip2,dip3,dip4,dip5):
+            analoutpar1 = 0
+            analoutpar2 = 0
+            analoutpar3 = 0
+            analoutpar4 = 0
+
+            discoutpar1 = 0
+            discoutpar2 = 0
+            discoutpar3 = 0
+            discoutpar4 = 0
+            discoutpar5 = 0
+            discoutpar6 = 0
+
+            analinputpar1 = 0
+            analinputpar2 = 0
+            analinputpar3 = 0
+            analinputpar4 = 0
+            analinputpar5 = 0
+
+            discinputpar1 = 0
+            discinputpar2 = 0
+            discinputpar3 = 0
+            discinputpar4 = 0
+            discinputpar5 = 0
             #сделать конструкторы для всех параметров, считываемых устройства
             #аналоговые и дискретные
 
@@ -111,6 +153,7 @@ class mainLab01(QDialog, Ui_Dialog):
             for element in self.data:
                 print(element, end=",")
             print("\r\n")
+
                 # iArray = int.from_bytes(data, byteorder='big', signed=False)
             # sArray = data.decode("utf-8")
 
@@ -120,6 +163,7 @@ class mainLab01(QDialog, Ui_Dialog):
 
 
 if __name__ == '__main__':
+
     app = QApplication(sys.argv)
     window = mainLab01()
     window.show()
