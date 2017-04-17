@@ -111,8 +111,6 @@ class mainLab01(QDialog, Ui_Dialog):
         #получение информации с пакета
         #из data(массив байт) извлекать слова(2 байта), преобразовать в Int
         #
-        w1=45 # с пакета
-        p2=13 # с пакета
         result = self.datainfo(w1,p2)
         #result.waterP Для вывода на форму
         return result
